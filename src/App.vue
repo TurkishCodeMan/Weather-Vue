@@ -1,5 +1,10 @@
 <template>
-  <div id="app" :class="typeof weather.main !='undefined' && weather.main.temp>14 ? 'hot' :''">
+  <div
+    id="app"
+    :class="
+      typeof weather.main != 'undefined' && weather.main.temp > 14 ? 'hot' : ''
+    "
+  >
     <div class="searchBox">
       <input
         @keypress="fetchWeather"
@@ -14,7 +19,7 @@
         <div class="location">
           {{ weather.name }} , {{ weather.sys.country }}
         </div>
-        <br>
+        <br />
         <div class="date">{{ dateBuilder() }}</div>
       </div>
       <div class="weather-box">
@@ -86,20 +91,18 @@ body {
   background-image: url("./assets/cold.jpg");
   background-size: cover;
   background-position: bottom;
- min-height: 100vh;
+  min-height: 100vh;
   padding: 25px;
 }
-#app.hot{
-   background-image: url("./assets/hot.jpg");
+#app.hot {
+  background-image: url("./assets/hot.jpg");
 }
 main {
- 
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0.75)
   );
-
 }
 
 .searchBox {
