@@ -3,7 +3,7 @@ const path = require("path");
 const serveStatic = require("serve-static");
 const app = express();
 
-app.get ("/",serveStatic(path.join(__dirname,"/dist")));
+app.use (serveStatic(path.join(__dirname,"/dist")));
 
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname,"/dist/index.html"));
